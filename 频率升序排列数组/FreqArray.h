@@ -53,7 +53,7 @@ FreqArray<DataType>::FreqArray()
 template<class DataType>
 FreqArray<DataType>::FreqArray(DataType a[], int n)
 {
-	data[0].freq = -1;
+	FreqArray<DataType>::FreqArray();
 	if (n > MaxSize - 1)
 		cout << "数据过多，初始化失败" << endl;
 	else

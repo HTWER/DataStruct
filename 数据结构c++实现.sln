@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "频率升序排列数组", "频率升序排列数组\频率升序排列数组.vcxproj", "{F1ABF6A0-2577-42FE-A01E-E7319B8FB43F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "双向循环链表", "双向循环链表\双向循环链表.vcxproj", "{1FDE11BA-0FEC-4AE8-A4D3-5D96ADABC991}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{F1ABF6A0-2577-42FE-A01E-E7319B8FB43F}.Debug|Win32.Build.0 = Debug|Win32
 		{F1ABF6A0-2577-42FE-A01E-E7319B8FB43F}.Release|Win32.ActiveCfg = Release|Win32
 		{F1ABF6A0-2577-42FE-A01E-E7319B8FB43F}.Release|Win32.Build.0 = Release|Win32
+		{1FDE11BA-0FEC-4AE8-A4D3-5D96ADABC991}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1FDE11BA-0FEC-4AE8-A4D3-5D96ADABC991}.Debug|Win32.Build.0 = Debug|Win32
+		{1FDE11BA-0FEC-4AE8-A4D3-5D96ADABC991}.Release|Win32.ActiveCfg = Release|Win32
+		{1FDE11BA-0FEC-4AE8-A4D3-5D96ADABC991}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
