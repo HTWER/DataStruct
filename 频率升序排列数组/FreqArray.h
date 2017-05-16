@@ -58,7 +58,10 @@ FreqArray<DataType>::FreqArray(DataType a[], int n)
 {
 	FreqArray<DataType>::FreqArray();
 	if (n > MaxSize - 1)
+	{
 		cout << "数据过多，初始化失败" << endl;
+		abort();
+	}
 	else
 	{
 		for (int i = 1; i <= n; i++)
@@ -74,7 +77,10 @@ template<class DataType>
 DataType FreqArray<DataType>::Get(int i)
 {
 	if (i<1 || i>m_length)					//跟书本不一样
+	{
 		cout << "查找位置非法" << endl;
+		abort();
+	}
 	else
 		return m_data[i].data;
 }
@@ -95,10 +101,14 @@ template<class DataType>
 void FreqArray<DataType>::Insert(int i, DataType x)
 {
 	if (m_length + 1 > MaxSize - 1)
+	{
 		cout << "若添加数据，将会上溢" << endl;
+		abort();
+	}
 	else if (i<1 || i>m_length + 1)
 	{
 		cout << "位置出现错误" << endl;
+		abort();
 	}
 	else
 	{
@@ -114,9 +124,15 @@ template <class DataType>
 DataType FreqArray<DataType>::Delete(int i)
 {
 	if (m_length == 0)
+	{
 		cout << "数据下溢" << endl;
+		abort();
+	}
 	else if (i<1 || i>m_length)
+	{
 		cout << "位置出现错误" << endl;
+		abort();
+	}
 	else
 	{
 		int x = m_data[i].data;

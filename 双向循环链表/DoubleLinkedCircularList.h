@@ -33,7 +33,7 @@ public:
 	int Length();					//获取链表长度
 
 private:
-	Node<DataType> * rear;			//一个没有数据的节点，一直正确处于循环链中，方便各种操作；方便吗？？？
+	Node<DataType> * rear;			//一个没有数据的节点，一直正确处于循环链中，统一空链表和非空链表的操作
 	int length;						//记录了链表长度
 };
 

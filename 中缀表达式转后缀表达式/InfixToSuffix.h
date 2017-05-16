@@ -8,7 +8,7 @@
 using namespace std;
 
 //要处理两个问题：
-//1.使用状态机解析句子成分
+//1.使用状态机解析句子成分(未使用状态机)
 //2.中缀转后缀
 
 //将double型数据装换成string型
@@ -102,7 +102,7 @@ vector<string> InfixToSuffix(string & ori)
 			}
 			operate.pop_back();
 		}
-		else									//遇上运算符
+		else if (ori[i] == '+' || ori[i] == '-' || ori[i] == '*' || ori[i] == '/')									//遇上运算符
 		{
 			if (ori[i] == '-' && (i - 1 < 0 || ori[i - 1] == '+' || ori[i - 1] == '-' || ori[i - 1] == '*' || ori[i - 1] == '/' || ori[i - 1] == '('))		//检测负数
 			{
@@ -159,6 +159,11 @@ vector<string> InfixToSuffix(string & ori)
 				}
 
 			}
+		}
+		else
+		{
+			cout << "遇上未知字符，转换失败" << endl;
+			abort();
 		}
 	}
 
