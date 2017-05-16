@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "双向循环链表", "双�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "中缀表达式转后缀表达式", "中缀表达式转后缀表达式\中缀表达式转后缀表达式.vcxproj", "{D815A365-5D74-4224-9C41-86BC9045C801}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "空间共享栈", "空间共享栈\空间共享栈.vcxproj", "{B96B2263-D99B-4163-A63E-D5424595A41C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +29,10 @@ Global
 		{D815A365-5D74-4224-9C41-86BC9045C801}.Debug|Win32.Build.0 = Debug|Win32
 		{D815A365-5D74-4224-9C41-86BC9045C801}.Release|Win32.ActiveCfg = Release|Win32
 		{D815A365-5D74-4224-9C41-86BC9045C801}.Release|Win32.Build.0 = Release|Win32
+		{B96B2263-D99B-4163-A63E-D5424595A41C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B96B2263-D99B-4163-A63E-D5424595A41C}.Debug|Win32.Build.0 = Debug|Win32
+		{B96B2263-D99B-4163-A63E-D5424595A41C}.Release|Win32.ActiveCfg = Release|Win32
+		{B96B2263-D99B-4163-A63E-D5424595A41C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
