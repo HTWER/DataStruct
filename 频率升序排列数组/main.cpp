@@ -1,6 +1,3 @@
-#include <iostream>
-#include <time.h>
-#include <stdlib.h>
 #include "FreqArray.h"
 using namespace std;
 
@@ -8,24 +5,24 @@ int main()
 {
 	FreqArray<int> array;
 
-	srand(1);  
-
-	for (int i = 1; i <= 99;i++)
-	{
-		int test = (rand() % 2 ? -1 : 1)*rand() % 360;
-		array.Insert(i,test);
-	}
-
-//	array.ArraySort();
-    
+	array.Insert(1, 3);
+	array.Insert(1, 4);
+	array.Insert(3, 5);
+	array.Insert(2, 6);
 	array.PrintList();
 
-	cout << endl << array.SeqSearch(361) << endl;
-	cout << endl << array.SeqSearch(163) << endl;
-	cout << endl << array.SeqSearch(218) << endl;
+	cout << array.Get(1) << endl;;
+	cout << array.Delete(2) << endl;
+
+	array.PrintList();
+	cout << array.Locate(3) << endl;
+	cout << array.Locate(6) << endl;
+
+	cout << array.SeqSearch(3) << endl;
+	cout << array.SeqSearch(6) << endl;
 
 	array.PrintList();
 
-	cin.get();
+	system("pause");
 	return 0;
 }
