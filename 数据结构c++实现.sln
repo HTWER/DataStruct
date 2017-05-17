@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "空间共享栈", "空间�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "循环队列", "循环队列\循环队列.vcxproj", "{460913ED-9DE0-4D8B-922E-27B129541475}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "顺序树", "顺序树\顺序树.vcxproj", "{740EEB21-8C59-4A1A-A2C5-D5DA7B938CFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -39,6 +41,10 @@ Global
 		{460913ED-9DE0-4D8B-922E-27B129541475}.Debug|Win32.Build.0 = Debug|Win32
 		{460913ED-9DE0-4D8B-922E-27B129541475}.Release|Win32.ActiveCfg = Release|Win32
 		{460913ED-9DE0-4D8B-922E-27B129541475}.Release|Win32.Build.0 = Release|Win32
+		{740EEB21-8C59-4A1A-A2C5-D5DA7B938CFD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{740EEB21-8C59-4A1A-A2C5-D5DA7B938CFD}.Debug|Win32.Build.0 = Debug|Win32
+		{740EEB21-8C59-4A1A-A2C5-D5DA7B938CFD}.Release|Win32.ActiveCfg = Release|Win32
+		{740EEB21-8C59-4A1A-A2C5-D5DA7B938CFD}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
