@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-const int StackSize = 100;			//栈的最大长度
+const int MaxSize = 100;			//栈的最大长度
 
 template <class DataType>
 class SpaceSharedStack
@@ -20,7 +20,7 @@ public:
 	int IsEmpty(int i);				//检测指定的栈是否为空
 
 private:
-	DataType m_data[StackSize];		//数据存储
+	DataType m_data[MaxSize];		//数据存储
 	int m_top1, m_top2;				//两个栈顶的位置
 };
 
@@ -28,7 +28,7 @@ template <class DataType>
 SpaceSharedStack<DataType>::SpaceSharedStack()
 {
 	m_top1 = -1;
-	m_top2 = StackSize;
+	m_top2 = MaxSize;
 }
 
 template <class DataType>
@@ -63,7 +63,7 @@ DataType SpaceSharedStack<DataType>::Pop(int i)
 	}
 	else if (i == 2)
 	{
-		if (m_top2 == StackSize)
+		if (m_top2 == MaxSize)
 		{
 			cout << "栈二为空，弹出失败";
 			abort();
@@ -88,7 +88,7 @@ DataType SpaceSharedStack<DataType>::GetTop(int i)
 	}
 	else if (i == 2)
 	{
-		if (m_top2 == StackSize)
+		if (m_top2 == MaxSize)
 		{
 			cout << "栈二越界访问" << endl;
 			abort();
@@ -108,7 +108,7 @@ int SpaceSharedStack<DataType>::IsEmpty(int i)
 	}
 	else if (i == 2)
 	{
-		if (m_top2 == StackSize)
+		if (m_top2 == MaxSize)
 			return 1;
 	}
 	return 0;
