@@ -3,7 +3,8 @@
 int main()
 {
 	OrderTree<char> test;     
-	test.ConstructByCin();	//测试数据A B # D # # C # #
+	//test.LevelConstructByCin();	//测试数据A B C # D
+	test.PreConstructByCin();		//测试数据A B # D # # C # #
 
 	cout << "前序遍历： ";
 	test.PreOrder();
@@ -18,7 +19,7 @@ int main()
 	cout << endl;
 
 	cout << "层序遍历： ";
-	test.LeverOrder();
+	test.LevelOrder();
 	cout << endl;
 
 	system("pause");
