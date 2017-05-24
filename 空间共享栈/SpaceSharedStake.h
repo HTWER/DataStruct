@@ -4,11 +4,10 @@
 #include <iostream>
 using namespace std;
 
-const int MaxSize = 100;			//栈的最大长度
-
 template <class DataType>
 class SpaceSharedStack
 {
+#define MaxSize 100
 public:
 	SpaceSharedStack();
 	~SpaceSharedStack(){}

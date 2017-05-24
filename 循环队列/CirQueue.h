@@ -4,9 +4,6 @@
 #include <iostream>
 using namespace std;
 
-//队列的容量
-const int MaxSize = 100;
-
 //循环队列(下面所说的指针并不是c++的指针)：
 //队头指针指向队头的元素的前一个位置，队尾指针指向队尾的元素
 //队空条件：头指针指向尾指针
@@ -16,6 +13,7 @@ const int MaxSize = 100;
 template <class DataType>
 class CirQueue
 {
+#define MaxSize 100
 public:
 	CirQueue();
 	~CirQueue(){}
