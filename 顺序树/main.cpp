@@ -1,8 +1,8 @@
-#include "OrderTree.h"
+#include "OrderedBinaryTree.h"
 
 int main()
 {
-	OrderTree<char> test;     
+	OrderedBinaryTree<char> test;
 	//test.LevelConstructByCin();	//测试数据A B C # D
 	test.PreConstructByCin();		//测试数据A B # D # # C # #
 

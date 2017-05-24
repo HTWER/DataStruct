@@ -64,7 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="OrderTree.h" />
+    <ClInclude Include="OrderedBinaryTree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
