@@ -15,7 +15,7 @@ public:
 	void Push(int i, DataType x);	//压栈
 	DataType Pop(int i);			//弹栈
 
-	DataType GetTop(int i);			//获去指定栈顶元素
+	DataType Back(int i);			//获去指定栈顶元素
 	int IsEmpty(int i);				//检测指定的栈是否为空
 
 private:
@@ -73,7 +73,7 @@ DataType SpaceSharedStack<DataType>::Pop(int i)
 }
 
 template <class DataType>
-DataType SpaceSharedStack<DataType>::GetTop(int i)
+DataType SpaceSharedStack<DataType>::Back(int i)
 {
 	if (i == 1)
 	{

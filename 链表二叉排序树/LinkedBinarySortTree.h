@@ -436,7 +436,7 @@ void LinkedBinarySortTree<DataType>::PostOrderfd(TreeNode<DataType>* bt)
 			bt = bt->lchild;             //无论是什么序，都是先左后右，
 		}                            //退出之后，开始弹栈，即处理上一个结点的右孩子
 
-		while (stack.IsEmpty(1) != 1 && (stack.GetTop(1)).flag == 2)        //第二次的访问   //当循环到stack为空了，这时bt也等于NULL，即完成
+		while (stack.IsEmpty(1) != 1 && (stack.Back(1)).flag == 2)        //第二次的访问   //当循环到stack为空了，这时bt也等于NULL，即完成
 		{
 			bt = (stack.Pop(1)).ptr;
 			cout << bt->data << " ";

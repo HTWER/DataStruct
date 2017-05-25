@@ -21,8 +21,8 @@ int main()
 	
 	cout << test.Pop(1) << endl;
 	cout << test.Pop(2) << endl;
-	cout << test.GetTop(1) << endl;
-	cout << test.GetTop(2) << endl;
+	cout << test.Back(1) << endl;
+	cout << test.Back(2) << endl;
 
 	cout << test.IsEmpty(1) << endl;
 	cout << test.IsEmpty(2) << endl;
