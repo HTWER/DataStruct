@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "顺序树", "顺序树\顺�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "链表二叉排序树", "链表二叉排序树\链表二叉排序树.vcxproj", "{FE3319EC-61F4-4CD0-ABB1-BF91A3F1D770}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "哈夫曼树", "哈夫曼树\哈夫曼树.vcxproj", "{5F207D0E-0D83-41FD-9ABA-EC765C231D4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -51,6 +53,10 @@ Global
 		{FE3319EC-61F4-4CD0-ABB1-BF91A3F1D770}.Debug|Win32.Build.0 = Debug|Win32
 		{FE3319EC-61F4-4CD0-ABB1-BF91A3F1D770}.Release|Win32.ActiveCfg = Release|Win32
 		{FE3319EC-61F4-4CD0-ABB1-BF91A3F1D770}.Release|Win32.Build.0 = Release|Win32
+		{5F207D0E-0D83-41FD-9ABA-EC765C231D4B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5F207D0E-0D83-41FD-9ABA-EC765C231D4B}.Debug|Win32.Build.0 = Debug|Win32
+		{5F207D0E-0D83-41FD-9ABA-EC765C231D4B}.Release|Win32.ActiveCfg = Release|Win32
+		{5F207D0E-0D83-41FD-9ABA-EC765C231D4B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
