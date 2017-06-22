@@ -21,8 +21,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "图-邻接矩阵存储", "�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "中缀表达式转后缀表达式", "中缀表达式转后缀表达式\中缀表达式转后缀表达式.vcxproj", "{59991BA7-790C-4B45-80F9-89BD39F3D000}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcxproj", "{D95C77CC-7FCA-4289-83F6-93846CBB0329}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -65,10 +63,6 @@ Global
 		{59991BA7-790C-4B45-80F9-89BD39F3D000}.Debug|Win32.Build.0 = Debug|Win32
 		{59991BA7-790C-4B45-80F9-89BD39F3D000}.Release|Win32.ActiveCfg = Release|Win32
 		{59991BA7-790C-4B45-80F9-89BD39F3D000}.Release|Win32.Build.0 = Release|Win32
-		{D95C77CC-7FCA-4289-83F6-93846CBB0329}.Debug|Win32.ActiveCfg = Debug|Win32
-		{D95C77CC-7FCA-4289-83F6-93846CBB0329}.Debug|Win32.Build.0 = Debug|Win32
-		{D95C77CC-7FCA-4289-83F6-93846CBB0329}.Release|Win32.ActiveCfg = Release|Win32
-		{D95C77CC-7FCA-4289-83F6-93846CBB0329}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
