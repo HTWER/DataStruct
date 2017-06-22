@@ -6,7 +6,7 @@ int main()
 	vector<string> tar;
 
 	tar = InfixToSuffix(ori);
-	cout << "后缀表达式计算结果" << CalSuffix(tar) << endl;
+	cout << "测试" << CalSuffix(tar) << endl;
 
 	system("pause");
 	return 0;
