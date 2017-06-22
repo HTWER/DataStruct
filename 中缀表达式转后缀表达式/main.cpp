@@ -1,4 +1,4 @@
-#include "InfixToSuffix.h"
+ï»¿#include "InfixToSuffix.h"
 
 int main()
 {
@@ -6,7 +6,7 @@ int main()
 	vector<string> tar;
 
 	tar = InfixToSuffix(ori);
-	cout << "ºó×º±í´ïÊ½¼ÆËã½á¹û£º" << CalSuffix(tar) << endl;
+	cout << "åŽç¼€è¡¨è¾¾å¼è®¡ç®—ç»“æžœï¼š" << CalSuffix(tar) << endl;
 
 	system("pause");
 	return 0;
