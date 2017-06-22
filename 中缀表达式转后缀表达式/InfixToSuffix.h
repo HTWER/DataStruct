@@ -81,7 +81,7 @@ vector<string> InfixToSuffix(string & ori)
 			string number;
 			while (ori[i] >= '0'&&ori[i] <= '9'&&i < ori.size())
 			{
-				number+=ori[i];
+				number += ori[i];
 				i++;
 			}
 			i--;
@@ -96,7 +96,7 @@ vector<string> InfixToSuffix(string & ori)
 		{
 			while (operate.back() != '(')
 			{
-				string temp(1,operate.back());
+				string temp(1, operate.back());
 				res.push_back(temp);
 				operate.pop_back();
 			}
@@ -122,7 +122,7 @@ vector<string> InfixToSuffix(string & ori)
 			else	//遇上操作符
 			{
 				//当前操作符无序比较直接压栈
-				if (operate.empty() || operate.back() == '(')		
+				if (operate.empty() || operate.back() == '(')
 				{
 					operate.push_back(ori[i]);
 				}
@@ -130,25 +130,25 @@ vector<string> InfixToSuffix(string & ori)
 				{
 					//用于检测当前字符的优先级
 					int weight = 0;
-					if (ori[i] == '*' || ori[i] == '/')												
+					if (ori[i] == '*' || ori[i] == '/')
 					{
 						weight = 1;
 					}
 
 					//用于检测栈中的字符的优先级
 					int weight2 = 0;
-					if (operate[operate.size() - 1] == '*' || operate[operate.size() - 1] == '/')  
+					if (operate[operate.size() - 1] == '*' || operate[operate.size() - 1] == '/')
 					{
 						weight2 = 1;
 					}
 
 					//当前字符的优先级大于栈中的字符
-					if (weight > weight2)   
+					if (weight > weight2)
 					{
 						//直接入符号栈
-						operate.push_back(ori[i]);		
+						operate.push_back(ori[i]);
 					}
-					else                    
+					else
 					{
 						//弹出符号栈顶内容到结果中
 						string temp(1, operate.back());
