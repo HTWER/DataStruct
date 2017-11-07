@@ -1,7 +1,7 @@
 #ifndef __ORDEREDBINARYTREE_H__
 #define __ORDEREDBINARYTREE_H__
 
-//Ë³Ðò¶þ²æÊ÷(OrderedBinaryTree)
+//é¡ºåºäºŒå‰æ ‘(OrderedBinaryTree)
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
@@ -11,26 +11,26 @@
 #include <cstring>
 using namespace std;
 
-//¹¹ÔìÒ»¿ÃÊ÷µÄ·½·¨£º
-//²ãÐò¹¹Ôì£ºÐèÒª±£Ö¤¹¹ÔìÐòÁÐÊÇÂú¶þ²æÊ÷µÄÐÎÌ¬£¬¼´Ã»ÓÐ½ÚµãµÄµØ·½Ò²ÒªÕ¼Ò»¸öÎ»£»
-//Ç°Ðò¹¹Ôì£ºÐèÒª±£Ö¤¹¹ÔìÐòÁÐµÄÃ¿Ò»¸ö·Ç¿ÕÔªËØ¶¼ÒªÓÐÁ½¸öº¢×Ó½Úµã£¬¼´Ê¹¸Ã·Ç¿ÕÔªËØÃ»ÓÐº¢×Ó½ÚµãÒ²ÒªÕ¼Ò»¸öÎ»£»
-//			Ô­±¾½öÍ¨¹ýÒ»¸öÐòÁÐÊÇÎÞ·¨¹¹ÔìÒ»¿ÃÊ÷µÄ£¬±ØÐëÒªÓÐÁ½¸öÐòÁÐÇÒÆäÖÐÒ»¸öÐòÁÐÊÇÖÐÐò£»µ«ÊÇÍ¨¹ýÉÏÃæµÄ·½·¨¿ÉÒÔÍ¨¹ýÒ»¸öÐòÁÐ¹¹Ôì³öÒ»¿ÃÊ÷£»
-//¹¹ÔìÐòÁÐÖÐµÄÕ¼Î»Ö»ÊÇÌá¹©¹¹ÔìÐèÒªµÄÐÅÏ¢£¬²»Ò»¶¨ËùÓÐµÄÕ¼Î»½Úµã¶¼ÐèÒª´æ´¢µ½Êý×éÖÐ
+//æž„é€ ä¸€æ£µæ ‘çš„æ–¹æ³•ï¼š
+//å±‚åºæž„é€ ï¼šä¸ºæ ‘æ·»åŠ #ï¼Œä½¿å®ƒå˜ä¸ºæ»¡äºŒå‰æ ‘
+//å‰åºæž„é€ ï¼šä¸ºæ ‘æ·»åŠ #ï¼Œä½¿å®ƒæ¯ä¸€ä¸ªéžå¶å­èŠ‚ç‚¹éƒ½æœ‰ä¸¤ä¸ªå­©å­
+//		åŽŸæœ¬ä»…é€šè¿‡ä¸€ä¸ªåºåˆ—æ˜¯æ— æ³•æž„é€ ä¸€æ£µæ ‘çš„ï¼Œå¿…é¡»è¦æœ‰ä¸¤ä¸ªåºåˆ—ä¸”å…¶ä¸­ä¸€ä¸ªåºåˆ—æ˜¯ä¸­åºï¼›ä½†æ˜¯é€šè¿‡ä¸Šé¢çš„æ–¹æ³•å¯ä»¥é€šè¿‡ä¸€ä¸ªåºåˆ—æž„é€ å‡ºä¸€æ£µæ ‘ï¼›
+//æž„é€ åºåˆ—ä¸­çš„å ä½åªæ˜¯æä¾›æž„é€ éœ€è¦çš„ä¿¡æ¯ï¼Œä¸ä¸€å®šæ‰€æœ‰çš„å ä½èŠ‚ç‚¹éƒ½éœ€è¦å­˜å‚¨åˆ°æ•°ç»„ä¸­
 
 template <class DataType>
 struct TreeNode
 {
-	DataType m_data;	//Êµ¼ÊÊý¾Ý
-	bool m_isEmpty;		//ÊÇ·ñÎªÕ¼Î»½Úµã
+	DataType m_data;	//å®žé™…æ•°æ®
+	bool m_isEmpty;		//æ˜¯å¦ä¸ºå ä½èŠ‚ç‚¹
 
-	//ÖØÒª
+	//é‡è¦
 	TreeNode()
 	{
 		m_isEmpty = true;
 	}
 };
 
-//Ë³ÐòÊ÷£ºÊý×é+Ê÷½á¹¹¿É×Ô¶¨Òå
+//é¡ºåºæ ‘ï¼šæ•°ç»„+æ ‘ç»“æž„å¯è‡ªå®šä¹‰
 template <class DataType>
 class OrderedBinaryTree
 {
@@ -38,13 +38,13 @@ public:
 	OrderedBinaryTree(){}
 	~OrderedBinaryTree(){}
 
-	//Êý¾ÝÖ®¼äÓÃ¿Õ¸ñ¸ô¿ª£¬×îÖÕ»Ø³µ
-	//ÊäÈëÊµ¼ÊÊý¾ÝÖÐ²»¿ÉÒÔ°üº¬¿Õ¸ñ£¬ÇÒÊµ¼ÊÊý¾Ý²»¿ÉÒÔÎª"#"
-	//ÒªÇóÊý¾ÝÀàÐÍÖ§³Ö>>³õÊ¼»¯
+	//æ•°æ®ä¹‹é—´ç”¨ç©ºæ ¼éš”å¼€ï¼Œæœ€ç»ˆå›žè½¦
+	//è¾“å…¥å®žé™…æ•°æ®ä¸­ä¸å¯ä»¥åŒ…å«ç©ºæ ¼ï¼Œä¸”å®žé™…æ•°æ®ä¸å¯ä»¥ä¸º"#"
+	//è¦æ±‚æ•°æ®ç±»åž‹æ”¯æŒ>>åˆå§‹åŒ–
 	void PreConstructByCin(){ PreConstructByCin(0); }
 	void LevelConstructByCin();
 
-	//ÔöÉ¾²é¸Ä¹¦ÄÜ..............²éÕÒ¹¦ÄÜÒªÇóÊý¾Ý²»ÄÜ¹»ÖØ¸´£¬·ñÔò¿ÉÄÜ²éÕÒµÃµ½µÄ½á¹û»áÓëÔ¤ÆÚ²»·û£»Èç¹ûÓ²ÐÔÒªÇóÊý¾Ý¿ÉÒÔÖØ¸´£¬ÄÇÃ´²éÕÒÐèÒª±éÀúÕû¸öÊ÷À´·µ»ØÒ»¸öÊý×é
+	//å¢žåˆ æŸ¥æ”¹åŠŸèƒ½..............æŸ¥æ‰¾åŠŸèƒ½è¦æ±‚æ•°æ®ä¸èƒ½å¤Ÿé‡å¤ï¼Œå¦åˆ™å¯èƒ½æŸ¥æ‰¾å¾—åˆ°çš„ç»“æžœä¼šä¸Žé¢„æœŸä¸ç¬¦ï¼›å¦‚æžœç¡¬æ€§è¦æ±‚æ•°æ®å¯ä»¥é‡å¤ï¼Œé‚£ä¹ˆæŸ¥æ‰¾éœ€è¦éåŽ†æ•´ä¸ªæ ‘æ¥è¿”å›žä¸€ä¸ªæ•°ç»„
 
 	void PreOrder(){ PreOrder(0); }
 	void InOrder(){ InOrder(0); }
@@ -54,14 +54,14 @@ public:
 private:
 	void PreConstructByCin(int index);
 
-	//ÒÔÏÂ±éÀúÐèÒªÊý¾ÝÀàÐÍÖ§³Ö<<ÔËËã£»
-	//ÇÒ±éÀú¶¼ÊÇÒ»´ÎÐÔÖ´ÐÐÍê³É£¬Èç¹ûÒªÇó±éÀú¹ý³ÌÊÇÍâ²¿¿É¿ØµÄ£¬Ç°ÖÐºóÐòÐèÒªÊ¹ÓÃÒ»¸öÕ»À´¿ØÖÆ±éÀúµÄ¹ý³Ì£¬²ãÐòÐèÒªÒ»¸ö±ê¼ÇÀ´¼ÇÂ¼µ±Ç°±éÀúÎ»ÖÃ£»
+	//ä»¥ä¸‹éåŽ†éœ€è¦æ•°æ®ç±»åž‹æ”¯æŒ<<è¿ç®—ï¼›
+	//ä¸”éåŽ†éƒ½æ˜¯ä¸€æ¬¡æ€§æ‰§è¡Œå®Œæˆï¼Œå¦‚æžœè¦æ±‚éåŽ†è¿‡ç¨‹æ˜¯å¤–éƒ¨å¯æŽ§çš„ï¼Œå‰ä¸­åŽåºéœ€è¦ä½¿ç”¨ä¸€ä¸ªæ ˆæ¥æŽ§åˆ¶éåŽ†çš„è¿‡ç¨‹ï¼Œå±‚åºéœ€è¦ä¸€ä¸ªæ ‡è®°æ¥è®°å½•å½“å‰éåŽ†ä½ç½®ï¼›
 	void PreOrder(int number);
 	void InOrder(int number);
 	void PostOrder(int number);
 	void LevelOrder(int number);
 
-	//Ê¹ÓÃÊý×éÀ´±£´æÊ÷£¬Ò»¶¨»áÓÐÕ¼Î»½Úµã£¬Á½¸öÊµ¼ÊÊý¾ÝÖ®¼äµÄÔªËØ¶¼ÊÇÕ¼Î»µÄ,Êý×éµÄ×î´ó³¤¶ÈÊÇ×îºóÒ»¸öÊµ¼ÊÊý¾ÝµÄÎ»ÖÃ+1
+	//ä½¿ç”¨æ•°ç»„æ¥ä¿å­˜æ ‘ï¼Œä¸€å®šä¼šæœ‰å ä½èŠ‚ç‚¹ï¼Œä¸¤ä¸ªå®žé™…æ•°æ®ä¹‹é—´çš„å…ƒç´ éƒ½æ˜¯å ä½çš„,æ•°ç»„çš„æœ€å¤§é•¿åº¦æ˜¯æœ€åŽä¸€ä¸ªå®žé™…æ•°æ®çš„ä½ç½®+1
 	vector<TreeNode<DataType>> m_space;		
 };
 
@@ -78,7 +78,7 @@ void OrderedBinaryTree<DataType>::PreConstructByCin(int index)
 		stringstream ss(str);
 		ss >> TreeNode.m_data;
 
-		//¿ÉÄÜÐèÒªÀ©ÈÝ
+		//å¯èƒ½éœ€è¦æ‰©å®¹
 		if (index >= m_space.size())
 			m_space.resize(index + 1);
 		m_space[index] = TreeNode;
@@ -93,13 +93,13 @@ void OrderedBinaryTree<DataType>::PreConstructByCin(int index)
 template <class DataType>
 void OrderedBinaryTree<DataType>::LevelConstructByCin()
 {
-	//ÊäÈëÊý¾ÝÔÚ1024¸ö×Ö·ûÒÔÄÚ
+	//è¾“å…¥æ•°æ®åœ¨1024ä¸ªå­—ç¬¦ä»¥å†…
 	string line;
 	getline(cin, line);
 	char charSource[1024];
 	strcpy(charSource, line.c_str());
 
-	//·Ö¸î×Ö·û´®
+	//åˆ†å‰²å­—ç¬¦ä¸²
 	char* str = strtok(charSource, " ");
 	while (str != NULL)
 	{
