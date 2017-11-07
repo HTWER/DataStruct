@@ -1,11 +1,11 @@
 #ifndef __LINKEDBINARYSORTTREE_H__
 #define __LINKEDBINARYSORTTREE_H__
 
-//Á´±íĞÎÊ½µÄ¶ş²æÅÅĞòÊ÷(LinkedBinarySortTree)
+//é“¾è¡¨å½¢å¼çš„äºŒå‰æ’åºæ ‘(LinkedBinarySortTree)
 
 #include <iostream>
-#include "../Ñ­»·¶ÓÁĞ/CirQueue.h"
-#include "../¿Õ¼ä¹²ÏíÕ»/SpaceSharedStake.h"
+#include "../å¾ªç¯é˜Ÿåˆ—/CirQueue.h"
+#include "../ç©ºé—´å…±äº«æ ˆ/SpaceSharedStake.h"
 using namespace std;
 
 template <class DataType>
@@ -15,7 +15,7 @@ struct TreeNode
 	TreeNode<DataType> * lchild, *rchild;
 };
 
-//·Çµİ¹é±éÀúÊ±Ê¹ÓÃ,ÓÃÓÚ¼ÇÂ¼µİ¹é×´Ì¬
+//éé€’å½’éå†æ—¶ä½¿ç”¨,ç”¨äºè®°å½•é€’å½’çŠ¶æ€
 template <class DataType>
 struct State
 {
@@ -23,8 +23,8 @@ struct State
 	int flag;
 };
 
-//¶ş²æÊ÷£ºÁ´±í+Âú×ã×óĞ¡ÓÒ´ó
-//Êı¾İ²»¿ÉÖØ¸´
+//äºŒå‰æ ‘ï¼šé“¾è¡¨+æ»¡è¶³å·¦å°å³å¤§
+//æ•°æ®ä¸å¯é‡å¤
 template <class DataType>
 class LinkedBinarySortTree
 {
@@ -33,28 +33,28 @@ public:
 	LinkedBinarySortTree(DataType a[], int n);
 	~LinkedBinarySortTree(){ Release(root); }
 
-	//Í¨¹ıcinÊäÈëÁ÷À´ÖØĞÂ¹¹½¨Ò»¿ÃÊ÷£»
-	//ÓÉÓÚÕâÑù¹¹½¨³öÀ´µÄÊ÷ÊÇÃ»ÓĞ¹æÂÉµÄ£¬ÍêÈ«ÓÉÓÃ»§×Ô¶¨£¬ÍêÈ«²»Âú×ã×óĞ¡ÓÒ´ó,ºÍÕâÀïµÄÉè¼Æ³åÍ»,ËùÒÔ×¢ÊÍ
+	//é€šè¿‡cinè¾“å…¥æµæ¥é‡æ–°æ„å»ºä¸€æ£µæ ‘ï¼›
+	//ç”±äºè¿™æ ·æ„å»ºå‡ºæ¥çš„æ ‘æ˜¯æ²¡æœ‰è§„å¾‹çš„ï¼Œå®Œå…¨ç”±ç”¨æˆ·è‡ªå®šï¼Œå®Œå…¨ä¸æ»¡è¶³å·¦å°å³å¤§,å’Œè¿™é‡Œçš„è®¾è®¡å†²çª,æ‰€ä»¥æ³¨é‡Š
 	//void CreateByCin(){ root = CreateByCinKernel(); }
 
-	//ÔöÉ¾²é(¸Ä)
+	//å¢åˆ æŸ¥(æ”¹)
 	void InsertBST(DataType a){ InsertBST(a, root); }
 	void DeleteBST(DataType k){ DeleteBST(k, root); }
-	TreeNode<DataType> * SearchBST(DataType k){ return SearchBST(k, root); }	//ÕâÀï²éÕÒ¹¦ÄÜÒªÇóÊı¾İ²»ÄÜ¹»ÖØ¸´£¬·ñÔò¿ÉÄÜ²éÕÒµÃµ½µÄ½á¹û»áÓëÔ¤ÆÚ²»·û£»Èç¹ûÓ²ĞÔÒªÇóÊı¾İ¿ÉÒÔÖØ¸´£¬ÄÇÃ´²éÕÒĞèÒª±éÀúÕû¸öÊ÷À´·µ»ØÒ»¸öÊı×é
+	TreeNode<DataType> * SearchBST(DataType k){ return SearchBST(k, root); }	//è¿™é‡ŒæŸ¥æ‰¾åŠŸèƒ½è¦æ±‚æ•°æ®ä¸èƒ½å¤Ÿé‡å¤ï¼Œå¦åˆ™å¯èƒ½æŸ¥æ‰¾å¾—åˆ°çš„ç»“æœä¼šä¸é¢„æœŸä¸ç¬¦ï¼›å¦‚æœç¡¬æ€§è¦æ±‚æ•°æ®å¯ä»¥é‡å¤ï¼Œé‚£ä¹ˆæŸ¥æ‰¾éœ€è¦éå†æ•´ä¸ªæ ‘æ¥è¿”å›ä¸€ä¸ªæ•°ç»„
 
-	//Ç°Ğò±éÀú
+	//å‰åºéå†
 	void PreOrder(){ PreOrder(root); }
 	void PreOrderfd(){ PreOrderfd(root); }
 
-	//ÖĞĞò±éÀú
+	//ä¸­åºéå†
 	void InOrder(){ InOrder(root); }
 	void InOrderfd(){ InOrderfd(root); }
 
-	//ºóĞò±éÀú
+	//ååºéå†
 	void PostOrder(){ PostOrder(root); }
 	void PostOrderfd(){ PostOrderfd(root); }
 
-	//²ãĞò±éÀú
+	//å±‚åºéå†
 	void LeverOrder();
 
 private:
@@ -62,10 +62,10 @@ private:
 
 	//TreeNode<DataType> * CreateByCinKernel();
 
-	void InsertBST(DataType a, TreeNode<DataType>* &root0);					//ÔÚÒÔroot0Îª¸ùµÄ×ÓÊ÷ÖĞ²åÈëÊı¾İa
-	void DeleteBST(DataType k, TreeNode<DataType> * root0);					//ÔÚÒÔroot0Îª¸ùµÄ×ÓÊ÷ÖĞÉ¾³ıÊı¾İa
-	TreeNode<DataType> * SearchBST(DataType k, TreeNode<DataType> * root0);		//ÔÚÒÔroot0Îª¸ùµÄ×ÓÊ÷ÖĞ²éÕÒÊı¾İk¶ÔÓ¦½ÚµãµÄµØÖ·
-	TreeNode<DataType> * SearchBSTF(TreeNode<DataType> * tar);					//²éÕÒtar½ÚµãµÄ¸¸½áµãµØÖ·
+	void InsertBST(DataType a, TreeNode<DataType>* &root0);					//åœ¨ä»¥root0ä¸ºæ ¹çš„å­æ ‘ä¸­æ’å…¥æ•°æ®a
+	void DeleteBST(DataType k, TreeNode<DataType> * root0);					//åœ¨ä»¥root0ä¸ºæ ¹çš„å­æ ‘ä¸­åˆ é™¤æ•°æ®a
+	TreeNode<DataType> * SearchBST(DataType k, TreeNode<DataType> * root0);		//åœ¨ä»¥root0ä¸ºæ ¹çš„å­æ ‘ä¸­æŸ¥æ‰¾æ•°æ®kå¯¹åº”èŠ‚ç‚¹çš„åœ°å€
+	TreeNode<DataType> * SearchBSTF(TreeNode<DataType> * tar);					//æŸ¥æ‰¾tarèŠ‚ç‚¹çš„çˆ¶ç»“ç‚¹åœ°å€
 
 	void PreOrder(TreeNode<DataType>* bt);
 	void PreOrderfd(TreeNode<DataType>* bt);
@@ -88,8 +88,8 @@ LinkedBinarySortTree<DataType>::LinkedBinarySortTree(DataType a[], int n)
 	}
 }
 
-//°´ÕÕÇ°Ğò´´½¨
-//ĞèÒª¸ÃÊı¾İÊı¾İÀàĞÍÖ§³Ö>>µÄ²Ù×÷
+//æŒ‰ç…§å‰åºåˆ›å»º
+//éœ€è¦è¯¥æ•°æ®æ•°æ®ç±»å‹æ”¯æŒ>>çš„æ“ä½œ
 //template <class DataType>   
 //TreeNode<DataType> * LinkedBinarySortTree<DataType>::CreateByCinKernel()
 //{
@@ -135,11 +135,11 @@ void LinkedBinarySortTree<DataType>::InsertBST(DataType a, TreeNode<DataType>* &
 template <class DataType>
 void LinkedBinarySortTree<DataType>::DeleteBST(DataType k, TreeNode<DataType> * root0)
 {
-	//Ñ°ÕÒpºÍf
+	//å¯»æ‰¾på’Œf
 	TreeNode<DataType> * p = SearchBST(k, root0);
 	if (p == NULL)
 	{
-		cout << "¸ÃÔªËØ²»´æÔÚ" << endl;
+		cout << "è¯¥å…ƒç´ ä¸å­˜åœ¨" << endl;
 		abort();
 	}
 
@@ -195,15 +195,15 @@ void LinkedBinarySortTree<DataType>::DeleteBST(DataType k, TreeNode<DataType> * 
 	}
 	else
 	{
-		//Ñ°ÕÒ±Èp´óµÄÖµÖĞ×îĞ¡µÄÄÇÒ»¸ö£¨»òÕß Ñ°ÕÒ±ÈpĞ¡µÄÖµÖĞ×î´óµÄÄÇÒ»¸ö£©
+		//å¯»æ‰¾æ¯”på¤§çš„å€¼ä¸­æœ€å°çš„é‚£ä¸€ä¸ªï¼ˆæˆ–è€… å¯»æ‰¾æ¯”på°çš„å€¼ä¸­æœ€å¤§çš„é‚£ä¸€ä¸ªï¼‰
 		TreeNode<DataType>* s = p->rchild;
 		while (s->lchild != NULL)
 			s = s->lchild;
 
-		//ÕâÊ±½«pµÄÖµ¸Ä³ÉsµÄÖµ
+		//è¿™æ—¶å°†pçš„å€¼æ”¹æˆsçš„å€¼
 		p->data = s->data;
 
-		//È»ºó¾Í¿ÉÒÔÉ¾³ıs½áµãÁË
+		//ç„¶åå°±å¯ä»¥åˆ é™¤sç»“ç‚¹äº†
 		DeleteBST(s->data, p->rchild);
 	}
 }
@@ -221,20 +221,20 @@ TreeNode<DataType> * LinkedBinarySortTree<DataType>::SearchBST(DataType k, TreeN
 		return SearchBST(k, root0->rchild);
 }
 
-//Ç°Ìá:tar½ÚµãÒ»¶¨´æÔÚ,Í¨¹ıSearchBSTµÃµ½µÄ·Ç¿ÕÖ¸ÕëÒ»¶¨¿ÉÒÔ
+//å‰æ:tarèŠ‚ç‚¹ä¸€å®šå­˜åœ¨,é€šè¿‡SearchBSTå¾—åˆ°çš„éç©ºæŒ‡é’ˆä¸€å®šå¯ä»¥
 template <class DataType>
 TreeNode<DataType> * LinkedBinarySortTree<DataType>::SearchBSTF(TreeNode<DataType> * tar)
 {
 	if (tar == NULL)
 	{
-		cout << "¸Ã½Úµã²»´æÔÚ£¬ÎŞ·¨²éÕÒ¸¸½Úµã" << endl;
+		cout << "è¯¥èŠ‚ç‚¹ä¸å­˜åœ¨ï¼Œæ— æ³•æŸ¥æ‰¾çˆ¶èŠ‚ç‚¹" << endl;
 		abort();
 	}
 
 	if (tar == root)
-		return NULL;	//´ú±íÃ»ÓĞ¸¸½Úµã
+		return NULL;	//ä»£è¡¨æ²¡æœ‰çˆ¶èŠ‚ç‚¹
 
-	//³õÊ¼×´Ì¬
+	//åˆå§‹çŠ¶æ€
 	TreeNode<DataType> * f = root;
 
 	while (f->lchild != tar&&f->rchild != tar)
@@ -249,7 +249,7 @@ TreeNode<DataType> * LinkedBinarySortTree<DataType>::SearchBSTF(TreeNode<DataTyp
 }
 
 
-//Ç°Ğò±éÀú
+//å‰åºéå†
 template <class DataType>
 void LinkedBinarySortTree<DataType>::PreOrder(TreeNode<DataType>* bt)
 {
@@ -267,25 +267,26 @@ template <class DataType>
 void LinkedBinarySortTree<DataType>::PreOrderfd(TreeNode<DataType>* bt)
 {
 #if 0
-	//×îÔ­Ê¼µÄĞ´·¨
-	SpaceSharedStack<TreeNode<DataType>*> stack;  //´´½¨¿ÕÕ»
+	//æœ€åŸå§‹çš„å†™æ³•
+	SpaceSharedStack<TreeNode<DataType>*> stack;  //åˆ›å»ºç©ºæ ˆ
 	while (!stack.Empty(1) || bt != NULL)
 	{
-		while (bt != NULL)					//É¨Ãè×ó½áµã£¬ÖªµÀËûÎª¿Õ²ÅÍË³ö£»×óÓÒ½áµã¶¼ÓÉËü½øĞĞ´¦Àí
+		while (bt != NULL)					//æ‰«æå·¦ç»“ç‚¹ï¼ŒçŸ¥é“ä»–ä¸ºç©ºæ‰é€€å‡ºï¼›å·¦å³ç»“ç‚¹éƒ½ç”±å®ƒè¿›è¡Œå¤„ç†
 		{
-			cout << bt->data << " ";		//½«µ±Ç°µÄ½áµãÊä³ö
-			stack.Push(1, bt);				//½«µ±Ç°½áµãÈëÕ»
-			bt = bt->lchild;				//Ç°ÖĞ¶¼ÊÇÏÈ×óºóÓÒ£¬
-		}									//ÍË³öÖ®ºó£¬¿ªÊ¼µ¯Õ»£¬¼´´¦ÀíÉÏÒ»¸ö½áµãµÄÓÒº¢×Ó
-		if (!stack.Empty(1))				//ÈôÕ»²»Îª¿Õ£¬Ôò¿ªÊ¼µ¯Õ»£¬µ¯³öÀ´µÄÕıºÃÊÇÉÏ¸ö½áµã
+			cout << bt->data << " ";		//å°†å½“å‰çš„ç»“ç‚¹è¾“å‡º
+			stack.Push(1, bt);				//å°†å½“å‰ç»“ç‚¹å…¥æ ˆ
+			bt = bt->lchild;				//å‰ä¸­éƒ½æ˜¯å…ˆå·¦åå³ï¼Œ
+		}									//é€€å‡ºä¹‹åï¼Œå¼€å§‹å¼¹æ ˆï¼Œå³å¤„ç†ä¸Šä¸€ä¸ªç»“ç‚¹çš„å³å­©å­
+		if (!stack.Empty(1))				//è‹¥æ ˆä¸ä¸ºç©ºï¼Œåˆ™å¼€å§‹å¼¹æ ˆï¼Œå¼¹å‡ºæ¥çš„æ­£å¥½æ˜¯ä¸Šä¸ªç»“ç‚¹
 		{
 			bt = stack.Pop(1);
-			bt = bt->rchild;				//Ê¹btÖ¸ÏòÓÒº¢×Ó
+			bt = bt->rchild;				//ä½¿btæŒ‡å‘å³å­©å­
 		}
 	}
 #endif
 #if 1
-	//ÓÃÕ»À´Ä£Äâµİ¹é¹ı³Ì
+	//ç”¨æ ˆæ¥æ¨¡æ‹Ÿé€’å½’
+	//è¿­ä»£å™¨å†™æ³•
 	SpaceSharedStack<State<DataType>> stack;
 	State<DataType> firstState;
 	firstState.ptr = root;
@@ -298,11 +299,11 @@ void LinkedBinarySortTree<DataType>::PreOrderfd(TreeNode<DataType>* bt)
 		curState.flag++;
 		if (curState.flag == 1)
 		{
-			//µÈÏÂ»¹Òª»ØÀ´
+			//ç­‰ä¸‹è¿˜è¦å›æ¥
 			cout << curState.ptr->data << " ";
 			stack.Push(1, curState);
 
-			//×óº¢×ÓµÄµ÷ÓÃ
+			//å·¦å­©å­çš„è°ƒç”¨
 			if (curState.ptr->lchild != NULL)
 			{
 				State<DataType> nextState;
@@ -315,7 +316,7 @@ void LinkedBinarySortTree<DataType>::PreOrderfd(TreeNode<DataType>* bt)
 		{
 			if (curState.ptr->rchild != NULL)
 			{
-				//ÓÒº¢×ÓµÄµ÷ÓÃ
+				//å³å­©å­çš„è°ƒç”¨
 				State<DataType> nextState;
 				nextState.flag = 0;
 				nextState.ptr = curState.ptr->rchild;
@@ -327,7 +328,7 @@ void LinkedBinarySortTree<DataType>::PreOrderfd(TreeNode<DataType>* bt)
 #endif
 }
 
-//ÖĞĞò±éÀú
+//ä¸­åºéå†
 template <class DataType>
 void LinkedBinarySortTree<DataType>::InOrder(TreeNode<DataType>* bt)
 {
@@ -345,27 +346,28 @@ template <class DataType>
 void LinkedBinarySortTree<DataType>::InOrderfd(TreeNode<DataType>* bt)
 {
 #if 0
-	//×îÔ­Ê¼µÄĞ´·¨
-	SpaceSharedStack<TreeNode<DataType>*> stack;  //´´½¨¿ÕÕ»
-	//ºËĞÄ
+	//æœ€åŸå§‹çš„å†™æ³•
+	SpaceSharedStack<TreeNode<DataType>*> stack;  //åˆ›å»ºç©ºæ ˆ
+	//æ ¸å¿ƒ
 	while (stack.IsEmpty(1) != 1 || bt != NULL)
 	{
-		while (bt != NULL)             //É¨Ãè×ó½áµã£¬ÖªµÀËûÎª¿Õ²ÅÍË³ö£»×óÓÒ½áµã¶¼ÓÉËü½øĞĞ´¦Àí
+		while (bt != NULL)             //æ‰«æå·¦ç»“ç‚¹ï¼ŒçŸ¥é“ä»–ä¸ºç©ºæ‰é€€å‡ºï¼›å·¦å³ç»“ç‚¹éƒ½ç”±å®ƒè¿›è¡Œå¤„ç†
 		{
-			stack.Push(1, bt);      //½«µ±Ç°½áµãÈëÕ»
-			bt = bt->lchild;             //Ç°ÖĞĞò£¬¶¼ÊÇÏÈ×óºóÓÒ£¬
-		}                            //ÍË³öÖ®ºó£¬¿ªÊ¼µ¯Õ»£¬¼´´¦ÀíÉÏÒ»¸ö½áµãµÄÓÒº¢×Ó
+			stack.Push(1, bt);      //å°†å½“å‰ç»“ç‚¹å…¥æ ˆ
+			bt = bt->lchild;             //å‰ä¸­åºï¼Œéƒ½æ˜¯å…ˆå·¦åå³ï¼Œ
+		}                            //é€€å‡ºä¹‹åï¼Œå¼€å§‹å¼¹æ ˆï¼Œå³å¤„ç†ä¸Šä¸€ä¸ªç»“ç‚¹çš„å³å­©å­
 
-		if (stack.IsEmpty(1) != 1)       //ÈôÕ»²»Îª¿Õ£¬Ôò¿ªÊ¼µ¯Õ»£¬µ¯³öÀ´µÄÕıºÃÊÇÉÏ¸ö½áµã
+		if (stack.IsEmpty(1) != 1)       //è‹¥æ ˆä¸ä¸ºç©ºï¼Œåˆ™å¼€å§‹å¼¹æ ˆï¼Œå¼¹å‡ºæ¥çš„æ­£å¥½æ˜¯ä¸Šä¸ªç»“ç‚¹
 		{
 			bt = stack.Pop(1);
-			cout << bt->data << " ";       //½«µ±Ç°µÄ½áµãÊä³ö
-			bt = bt->rchild;        //Ê¹btÖ¸ÏòÓÒº¢×Ó
+			cout << bt->data << " ";       //å°†å½“å‰çš„ç»“ç‚¹è¾“å‡º
+			bt = bt->rchild;        //ä½¿btæŒ‡å‘å³å­©å­
 		}
 	}
 #endif
 #if 1
-	//ÓÃÕ»À´Ä£Äâµİ¹é
+	//ç”¨æ ˆæ¥æ¨¡æ‹Ÿé€’å½’
+	//è¿­ä»£å™¨å†™æ³•
 	SpaceSharedStack<State<DataType>> stack;
 	State<DataType> firstState;
 	firstState.ptr = root;
@@ -404,7 +406,7 @@ void LinkedBinarySortTree<DataType>::InOrderfd(TreeNode<DataType>* bt)
 #endif
 }
 
-//ºóĞò±éÀú
+//ååºéå†
 template <class DataType>
 void LinkedBinarySortTree<DataType>::PostOrder(TreeNode<DataType>* bt)
 {
@@ -422,33 +424,33 @@ template <class DataType>
 void LinkedBinarySortTree<DataType>::PostOrderfd(TreeNode<DataType>* bt)
 {
 #if 0
-	//×îÔ­Ê¼µÄĞ´·¨
-	SpaceSharedStack<State<DataType> > stack;  //´´½¨¿ÕÕ»
+	//æœ€åŸå§‹çš„å†™æ³•
+	SpaceSharedStack<State<DataType> > stack;  //åˆ›å»ºç©ºæ ˆ
 	State<DataType> temp;
-	//ºËĞÄ
+	//æ ¸å¿ƒ
 	while (stack.IsEmpty(1) != 1 || bt != NULL)
 	{
-		while (bt != NULL)             //É¨Ãè×ó½áµã£¬ÖªµÀËûÎª¿Õ²ÅÍË³ö£»×óÓÒ½áµã¶¼ÓÉËü½øĞĞ´¦Àí
+		while (bt != NULL)             //æ‰«æå·¦ç»“ç‚¹ï¼ŒçŸ¥é“ä»–ä¸ºç©ºæ‰é€€å‡ºï¼›å·¦å³ç»“ç‚¹éƒ½ç”±å®ƒè¿›è¡Œå¤„ç†
 		{
 			temp.ptr = bt;
 			temp.flag = 1;
-			stack.Push(1, temp);      //½«µ±Ç°½áµãÈëÕ»
-			bt = bt->lchild;             //ÎŞÂÛÊÇÊ²Ã´Ğò£¬¶¼ÊÇÏÈ×óºóÓÒ£¬
-		}                            //ÍË³öÖ®ºó£¬¿ªÊ¼µ¯Õ»£¬¼´´¦ÀíÉÏÒ»¸ö½áµãµÄÓÒº¢×Ó
+			stack.Push(1, temp);      //å°†å½“å‰ç»“ç‚¹å…¥æ ˆ
+			bt = bt->lchild;             //æ— è®ºæ˜¯ä»€ä¹ˆåºï¼Œéƒ½æ˜¯å…ˆå·¦åå³ï¼Œ
+		}                            //é€€å‡ºä¹‹åï¼Œå¼€å§‹å¼¹æ ˆï¼Œå³å¤„ç†ä¸Šä¸€ä¸ªç»“ç‚¹çš„å³å­©å­
 
-		while (stack.IsEmpty(1) != 1 && (stack.Back(1)).flag == 2)        //µÚ¶ş´ÎµÄ·ÃÎÊ   //µ±Ñ­»·µ½stackÎª¿ÕÁË£¬ÕâÊ±btÒ²µÈÓÚNULL£¬¼´Íê³É
+		while (stack.IsEmpty(1) != 1 && (stack.Back(1)).flag == 2)        //ç¬¬äºŒæ¬¡çš„è®¿é—®   //å½“å¾ªç¯åˆ°stackä¸ºç©ºäº†ï¼Œè¿™æ—¶btä¹Ÿç­‰äºNULLï¼Œå³å®Œæˆ
 		{
 			bt = (stack.Pop(1)).ptr;
 			cout << bt->data << " ";
-			bt = NULL;   //¹Ø¼ü
+			bt = NULL;   //å…³é”®
 		}
 
-		//		cout << bt->data;       //½«µ±Ç°µÄ½áµãÊä³ö
+		//		cout << bt->data;       //å°†å½“å‰çš„ç»“ç‚¹è¾“å‡º
 
-		if (stack.IsEmpty(1) != 1)       //ÈôÕ»²»Îª¿Õ£¬Ôò¿ªÊ¼µ¯Õ»£¬µ¯³öÀ´µÄÕıºÃÊÇÉÏ¸ö½áµã
+		if (stack.IsEmpty(1) != 1)       //è‹¥æ ˆä¸ä¸ºç©ºï¼Œåˆ™å¼€å§‹å¼¹æ ˆï¼Œå¼¹å‡ºæ¥çš„æ­£å¥½æ˜¯ä¸Šä¸ªç»“ç‚¹
 		{
 			temp = stack.Pop(1);
-			bt = (temp.ptr)->rchild;    //Ê¹btÖ¸ÏòÓÒº¢×Ó
+			bt = (temp.ptr)->rchild;    //ä½¿btæŒ‡å‘å³å­©å­
 
 			temp.flag = 2;
 			stack.Push(1, temp);
@@ -456,6 +458,8 @@ void LinkedBinarySortTree<DataType>::PostOrderfd(TreeNode<DataType>* bt)
 	}
 #endif
 #if 1
+	//ç”¨æ ˆæ¥æ¨¡æ‹Ÿé€’å½’
+	//è¿­ä»£å™¨å†™æ³•
 	SpaceSharedStack<State<DataType>> stack;
 	State<DataType> firstState;
 	firstState.flag = 0;
@@ -498,7 +502,7 @@ void LinkedBinarySortTree<DataType>::PostOrderfd(TreeNode<DataType>* bt)
 }
 
 template <class DataType>
-void LinkedBinarySortTree<DataType>::LeverOrder()			//Ë¼Ïë£ºÏÈ·ÃÎÊµÄ½áµãµÄº¢×Ó Òª±È ºó·ÃÎÊµÄ½áµãµÄº¢×Ó ÏÈ·ÃÎÊ (ÇÒ×ó±ßµÄ±ÈÓÒ±ßµÄº¢×ÓÏÈ·ÃÎÊ)
+void LinkedBinarySortTree<DataType>::LeverOrder()			//æ€æƒ³ï¼šå…ˆè®¿é—®çš„ç»“ç‚¹çš„å­©å­ è¦æ¯” åè®¿é—®çš„ç»“ç‚¹çš„å­©å­ å…ˆè®¿é—® (ä¸”å·¦è¾¹çš„æ¯”å³è¾¹çš„å­©å­å…ˆè®¿é—®)
 {
 	if (root == NULL)
 		return;
@@ -507,7 +511,7 @@ void LinkedBinarySortTree<DataType>::LeverOrder()			//Ë¼Ïë£ºÏÈ·ÃÎÊµÄ½áµãµÄº¢×Ó Ò
 	queue.Push(root);
 
 	TreeNode<DataType>* temp;
-	while (!queue.IsEmpty())				//¶ÓÁĞÖ»Òª²»Îª¿Õ¶¼¿ÉÒÔ¼ÌĞø³ö¶ÓÔªËØ£»Ò»µ©Îª¿Õ£¬Ò²Ö¤Ã÷ÊéÒÑ¾­±éÀúÍæ£¬ÒòÎªÖ»ÓĞ²»ÔÙÓĞĞÂµÄº¢×ÓµÄÊ±ºò²Å»áÂıÂı±ä¿Õ
+	while (!queue.IsEmpty())				//é˜Ÿåˆ—åªè¦ä¸ä¸ºç©ºéƒ½å¯ä»¥ç»§ç»­å‡ºé˜Ÿå…ƒç´ ï¼›ä¸€æ—¦ä¸ºç©ºï¼Œä¹Ÿè¯æ˜ä¹¦å·²ç»éå†ç©ï¼Œå› ä¸ºåªæœ‰ä¸å†æœ‰æ–°çš„å­©å­çš„æ—¶å€™æ‰ä¼šæ…¢æ…¢å˜ç©º
 	{
 		temp = queue.Back();
 		queue.Pop();
@@ -526,7 +530,7 @@ void LinkedBinarySortTree<DataType>::Release(TreeNode<DataType>* bt)
 {
 	if (bt != NULL)
 	{
-		//×¢ÒâË³Ğò
+		//æ³¨æ„é¡ºåº
 		Release(bt->lchild);
 		Release(bt->rchild);
 		delete bt;
